@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  
+  <% include head-partial.ejs %>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <body>
+    
+    <% include navbar-partial.ejs%>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-10">
+          
+            <form id="analysisForm">
+                <p class="lead">Pick a date range and granulation</p>
+                <div class="form-row">
+                    <div class="form-group col">
+                        <input type="text" class="form-control" id="from-date" name="fromDate" placeholder="From">
+                    </div>
+                    <div class="form-group col">
+                        <input type="text" class="form-control" id="to-date" name="toDate" placeholder="To">
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="analysisType" id="searchtype1" value="HOUR"> HOUR
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="analysisType" id="searchtype2" value="DAY" checked> DAY
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">Show log</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+      </div>
+      <div id="table-row" class="row">
+        </div>
+    </div>
+
+    <% include scripts-partial.ejs%>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#from-date" ).datepicker({dateFormat: 'yy-mm-dd'});
+        } );
+         $( function() {
+            $( "#to-date" ).datepicker({dateFormat: 'yy-mm-dd'});
+        } );
+    </script>
+    <script src="/javascripts/analysisForm.js"></script>
+
+  </body>
+</html>

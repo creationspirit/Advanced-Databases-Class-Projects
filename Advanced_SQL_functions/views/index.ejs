@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  
+  <% include head-partial.ejs %>
+  
+  <body>
+    
+    <% include navbar-partial.ejs %>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <form id="createForm">
+            <div id="title-group" class="form-group">
+              <label for="title">Title</label>
+              <textarea class="form-control" name="title" id="title" rows="1"></textarea>
+            </div>
+            <div id="categories-group" class="form-group">
+              <label for="categories">Categories</label>
+              <textarea class="form-control" name="categories" id="categories" rows="1"></textarea>
+            </div>
+            <div id="summary-group" class="form-group">
+              <label for="summary">Summary</label>
+              <textarea class="form-control" name="summary" id="summary" rows="3"></textarea>
+            </div>
+            <div id="description-group" class="form-group">
+              <label for="description">Description</label>
+              <textarea class="form-control" name="description" id="description" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Add movie</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <% include scripts-partial.ejs%>
+
+    <script src="/javascripts/createForm.js"></script>
+  </body>
+</html>
